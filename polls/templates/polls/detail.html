@@ -1,0 +1,26 @@
+<style>
+table {
+     border-collapse: collapse;
+}
+td, tr, th {
+    border: 1px solid black;
+} 
+</style>
+
+<body>
+    <div>
+        <table>
+            <th>{{question.question_text}}</th>
+                {% for choice in question.choice_set.all %}
+                    <tr>
+                        <td>{{choice.choice_text}}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td>No choice available.</td>
+                    </tr>
+                {% endfor %}
+        </table>
+      
+    </div>
+</body>
